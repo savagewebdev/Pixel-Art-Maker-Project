@@ -1,21 +1,16 @@
 // Select size input
-$("form").submit(function( event ) {
-	if ( $( "input:first" ).val() === "correct" ) {
-		$( "span" ).text( "Validated..." ).show();
-		return;
-	}
- 
-	$( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
-	event.preventDefault();
-}
-
-
+const n = $("input:first" ).val(); // value? () === "correct" ) { var n and m equal the parameters for makeGrid?
+const m = $("input:second").val(); // value? 	
+	
+	
 // Select color input
+$("#colorPicker").on(function(event) {
+	return;
+}
 
 // When size is submitted by the user, call makeGrid()
 
-function makeGrid() {
-
-// Your code goes here!
-
+function makeGrid(n, m) {
+$("form").submit(function( event ) {
+event.preventDefault();
 }
