@@ -11,6 +11,6 @@ $("#colorPicker").on(function(event) {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid(n, m) {
-$("form").submit(function( event ) {
+$("form").submit(function(event) {
 event.preventDefault();
 }
