@@ -30,6 +30,8 @@ function buttonLove() { // Used to initialize the makeGrid function.
 //$("#colorPicker").on(function(event) {
 //	return;
 
+// Utilize Chrome's Javascript console for each function until it works.
+
 
 
 
