@@ -1,10 +1,12 @@
 // Select size input
 let n = function() {
 	$("input:first").val();
+	return;
 }
 
 let m = function() {
 	$("input:second").val(); // value? 
+	return;
 }	
 
 function buttonLove() { // Used to initialize the makeGrid function.
