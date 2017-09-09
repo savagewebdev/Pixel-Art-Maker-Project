@@ -1,21 +1,19 @@
 // Select size input
-let n;
-
-n = function() {
+function n() { // Vertical y axis.
 	$("input:first").val();
 }
 
-let m;
-
-m = function() {
+function m() { // Horizontal x axis.
 	$("input:second").val(); // value? 
 }	
 
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
-	for (let i = 1; i < n; i++) {
+	let y = m(); 
+	for (const i = 1; i < y; i++) {
 		$("#pixel_canvas").append("<tr> </tr>"); // For each input number, create a row.
-		for (let l = 1; l < m; l++) {
+		let x = n();
+		for (const l = 1; l < x; l++) {
 			$("tr").append("<td> </td>"); // For each row, create a column (data).
 		}	
 	}
