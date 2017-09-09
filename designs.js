@@ -1,10 +1,14 @@
 // Select size input
-let n = function() {
+let n;
+
+n = function() {
 	$("input:first").val();
 	return;
 }
 
-let m = function() {
+let m;
+
+m = function() {
 	$("input:second").val(); // value? 
 	return;
 }	
