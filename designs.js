@@ -8,12 +8,10 @@ function m() { // Horizontal x axis.
 }	
 
 // When size is submitted by the user, call makeGrid()
-function makeGrid() {
-	let y = m(); 
-	for (const i = 1; i < y; i++) {
+function makeGrid(n(), m) {
+	for (const i = 1; i < n; i++) {
 		$("#pixel_canvas").append("<tr> </tr>"); // For each input number, create a row.
-		let x = n();
-		for (const l = 1; l < x; l++) {
+		for (const l = 1; l < m(); l++) {
 			$("tr").append("<td> </td>"); // For each row, create a column (data).
 		}	
 	}
@@ -23,7 +21,7 @@ function buttonLove() { // Used to initialize the makeGrid function.
 	$("form").submit(makeGrid());
 }
 
-
+buttonLove();
 // Select color input
 //$("#colorPicker").on(function(event) {
 //	return;
