@@ -9,10 +9,6 @@ let m = function() {
 	return;
 }	
 
-function buttonLove() { // Used to initialize the makeGrid function.
-	$("form").submit(makeGrid());
-}
-
 // When size is submitted by the user, call makeGrid()
 function makeGrid() {
 	for (var i = 1; i < n; i++) {
@@ -23,6 +19,9 @@ function makeGrid() {
 	}
 }
 
+function buttonLove() { // Used to initialize the makeGrid function.
+	$("form").submit(makeGrid());
+}
 
 
 // Select color input
