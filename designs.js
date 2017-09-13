@@ -2,13 +2,13 @@
 let n;
 
 n = function() {
-	$("input:first").val();
+	$("#input_height").val();
 }
 
 let m;
 
 m = function() {
-	$("input:second").val(); // value? 
+	$("#input_width").val(); // value? 
 }	
 
 // When size is submitted by the user, call makeGrid()
