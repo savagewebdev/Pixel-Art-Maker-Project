@@ -1,5 +1,4 @@
 // Select size input
-
 var height = function() { // The height variable defined as a function
 	$("#input_height:input").val(); // which selects an input box with the ID of #input_height and produces an input value via method
 	return; // and returns it for later use.
@@ -11,6 +10,7 @@ var width = function() { // Same as above, but defining width.
 }
 
 function makeGrid(width, height) { // The function in charge of creating the grid using the above axis vars as parameters. The axis variables help to determine the extent of the "for" loops.
+	$("tr").remove();
 	for (var i = 0; i < height; i++) { // Create as many rows as requested.
 		$("#pixel_canvas").append("<tr> </tr>"); // Add to the table rows.
 	}
@@ -28,12 +28,11 @@ $("form").submit(function(event) { // The function enacted via jquery when the s
 });
 // Thus the "submit" event & jquery function simply draws upon the makeGrid function for its actions, which in turn uses the height and width inputs for two reasons: As variables determining the limits of the "for" loop, and as local parameters in the submit event. They cannot be shared due to the separate scope of the two functions, but they do both draw upon the same source--the input data itself. 
 
-
 // Select color input
 //$("#colorPicker").on(function(event) {
 //	return;
 
-// Utilize Chrome's Javascript console for each function until it works.
+
 
 
 
