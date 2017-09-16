@@ -11,12 +11,13 @@ var width = function() { // Same as above, but defining width.
 }
 
 function makeGrid(width, height) { // The function in charge of creating the grid using the above axis vars as parameters. The axis variables help to determine the extent of the "for" loops.
-	for (var i = 0; i < width; i++) {
-		$("#pixel_canvas").append("<tr> </tr>"); // For each input number, create a row.
-		for (var l = 0; l < height; l++) {
-			$("tr").append("<td> </td>"); // For each row, create a column (data).
-		}	
+	for (var i = 0; i < height; i++) { // Create as many rows as requested.
+		$("#pixel_canvas").append("<tr> </tr>"); // Add to the table rows.
 	}
+	for (var l = 0; l < width; l++) { // For as many columns as are requested...
+			$("tr").append("<td> </td>"); // append the rows with columns <td>.
+	}	
+	return;
 }
 
 $("form").submit(function(event) { // The function enacted via jquery when the submit button is pressed.
