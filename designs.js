@@ -1,43 +1,37 @@
 // Select size input
-var height = function() { // The height variable defined as a function
-	$("#input_height:input").val(); // which selects an input box with the ID of #input_height and produces an input value via method
-	return; // and returns it for later use.
+var height = function() { 
+	$("#input_height:input").val(); 
 }
 
-var width = function() { // Same as above, but defining width.
+var width = function() { 
 	$("#input_width:input").val();
 	return;
 }
 
-var color = function() { // Enables the process of picking colors.
-	$("#colorPicker:input").val();
+var color = function() { 	$("#colorPicker:input").val();
 	return;
 }
 
-function makeGrid(width, height) { // The function in charge of creating the grid using the above axis vars as parameters. The axis variables help to determine the extent of the "for" loops.
-	$("tr").remove(); // Clear the grid.
-	for (var i = 0; i < height; i++) { // Create as many rows as requested.
-		$("#pixel_canvas").append("<tr> </tr>"); // Add to the table rows.
+function makeGrid(width, height) { 
+	$("tr").remove(); 
+	for (var i = 0; i < height; i++) { 
+		$("#pixel_canvas").append("<tr> </tr>"); 
 	}
-	for (var l = 0; l < width; l++) { // For as many columns as are requested...
-			$("tr").append("<td> </td>"); // append the rows with columns <td>.
+	for (var l = 0; l < width; l++) { 
+			$("tr").append("<td> </td>"); 
 	}	
-	$("#pixel_canvas").on("click", 'td', function(event) { // Delegated event listener asks for a td within the table #pixel_canvas.
+	$("#pixel_canvas").on("click", 'td', function(event) { 
 		$(event.target).css('background-color', $("#colorPicker").val());
 	});
 	return;
 }
 
-$("form").submit(function(event) { // The function enacted via jquery when the submit button is pressed.
-	event.preventDefault(); // First, prevent the form from being submitted.
-	let width = $("#input_width").val(); // 
-	let height = $("#input_height").val(); // Locally, the variables are defined as the DOM's input values...
-	makeGrid(width, height); // and are used as arguments in calling the makeGrid function.
+$("form").submit(function(event) { 
+	event.preventDefault(); 
+	let width = $("#input_width").val(); 
+	let height = $("#input_height").val(); 
+	makeGrid(width, height); 
 });
-// Thus the "submit" event & jquery function simply draws upon the makeGrid function for its actions, which in turn uses the height and width inputs for two reasons: 1). As variables determining the limits of the "for" loop, 2). and as local parameters in the submit event. They cannot be shared due to the separate scope of the two functions, but they do both draw upon the same source--the input data itself. 
-
-
-
 
 
 	
