@@ -34,7 +34,7 @@ $("form").submit(function(event) { // The function enacted via jquery when the s
 	let height = $("#input_height").val(); // Locally, the variables are defined as the DOM's input values...
 	makeGrid(width, height); // and are used as arguments in calling the makeGrid function.
 });
-// Thus the "submit" event & jquery function simply draws upon the makeGrid function for its actions, which in turn uses the height and width inputs for two reasons: As variables determining the limits of the "for" loop, and as local parameters in the submit event. They cannot be shared due to the separate scope of the two functions, but they do both draw upon the same source--the input data itself. 
+// Thus the "submit" event & jquery function simply draws upon the makeGrid function for its actions, which in turn uses the height and width inputs for two reasons: 1). As variables determining the limits of the "for" loop, 2). and as local parameters in the submit event. They cannot be shared due to the separate scope of the two functions, but they do both draw upon the same source--the input data itself. 
 
 
 
