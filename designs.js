@@ -9,8 +9,9 @@ var width = function() { // Same as above, but defining width.
 	return;
 }
 
-var colour = function() {
+var color = function() { // Enables the process of picking colors.
 	$("#colorPicker:input").val();
+	return;
 }
 
 function makeGrid(width, height) { // The function in charge of creating the grid using the above axis vars as parameters. The axis variables help to determine the extent of the "for" loops.
@@ -21,6 +22,9 @@ function makeGrid(width, height) { // The function in charge of creating the gri
 	for (var l = 0; l < width; l++) { // For as many columns as are requested...
 			$("tr").append("<td> </td>"); // append the rows with columns <td>.
 	}	
+	$("#pixel_canvas").on("click", 'td', function(event) { // Delegated event listener asks for a td within the table #pixel_canvas.
+		$(event.target).css('background-color', $("#colorPicker").val());
+	});
 	return;
 }
 
@@ -31,9 +35,6 @@ $("form").submit(function(event) { // The function enacted via jquery when the s
 	makeGrid(width, height); // and are used as arguments in calling the makeGrid function.
 });
 // Thus the "submit" event & jquery function simply draws upon the makeGrid function for its actions, which in turn uses the height and width inputs for two reasons: As variables determining the limits of the "for" loop, and as local parameters in the submit event. They cannot be shared due to the separate scope of the two functions, but they do both draw upon the same source--the input data itself. 
-
-// Create a jquery event listener that senses each cell as a touchable object that will be changed to the given colour once pressed.
-
 
 
 
