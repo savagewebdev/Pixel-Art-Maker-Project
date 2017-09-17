@@ -1,26 +1,26 @@
 // Select size input
-var height = function() { 
+const height = function() { 
 	$("#input_height:input").val(); 
 }
 
-var width = function() { 
+const width = function() { 
 	$("#input_width:input").val();
 	return;
 }
 
-var color = function() { 	$("#colorPicker:input").val();
+const color = function() { 	$("#colorPicker:input").val();
 	return;
 }
 
 function makeGrid(width, height) { 
 	$("tr").remove(); 
-	for (var i = 0; i < height; i++) { 
+	for (let i = 0; i < height; i++) { 
 		$("#pixel_canvas").append("<tr> </tr>"); 
 	}
-	for (var l = 0; l < width; l++) { 
+	for (let l = 0; l < width; l++) { 
 			$("tr").append("<td> </td>"); 
 	}	
-	$("#pixel_canvas").on("click", 'td', function(event) { 
+	$("#pixel_canvas").on('click', 'td', function(event) { 
 		$(event.target).css('background-color', $("#colorPicker").val());
 	});
 	return;
